@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="{message}"></h1>
+<table border="2">
+    <thead>
+    <th>FormNo</th>
+    <th>Date</th>
+    <th>FullName</th>
+    <th>RegNo</th>
+    <th>WhatsappNo</th>
+    <th>EmailId</th>
+    <th>CourseCode</th>
+    <th>TrinerName</th>
+    <th>Actions</th>
+    </thead>
+    <tr th:each="student:${students}">
+        <td th:text="${student.FormNo}"></td>
+        <td th:text="${student.Date}"></td>
+        <td th:text="${student.FullName}"></td>
+        <td th:text="${student.RegNo}"></td>
+        <td th:text="${student.WhatsappNo}"></td>
+        <td th:text="${student.EmailId}"></td>
+        <td th:text="${student.CourseCode}"></td>
+        <td th:text="${student.TrinerName}"></td>
+
+
+        <td>
+            <a th:href="@{/del/{id}(id=${student.id})}">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{'/edit/'+${student.id}}">Edit</a>
+
+        </td>
+
+    </tr>
+
+
+
+
+
+</table>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>STUDENT FORM</title>
+
+
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+<div class="container">
+    <h1 align="center"><span style="color:blue">T</span><span style="color:yellow">4</span><span style="color:blue">TEQ</span> <span style="color:yellow">S</span><span style="color:blue">O</span><span style="color:yellow">FTWARE</span> <span style="color:blue">S</span><span style="color:yellow">O</span><span style="color:blue">LUTIONS</span></h1>
+   <hr width="800px"></hr>
+
+    <h3 align="center"><span style="color:green">CERTIFICATE REQUEST APPLICATION</span></h3>
+
+<form th:action="@{/new}" th:object="${Student}" method="post">
+<div>
+    <label for="formnumber">Form Number:
+        <input type="number"  id="formnumber" th:field="*{FormNo}">
+        <span th:if="${#fields.hasErrors('FormNo')}" th:errors="*{FormNo}"></span>
+    </label><br><br>
+</div>
+
+
+<div align="right">
+    <label for="date">Date:
+        <input type="date" id="date" th:field="*{Date}">
+        <span th:if="${#fields.hasErrors('Date')}" th:errors="*{Date}"></span>
+    </label><br><br>
+</div>
+
+<div>
+    <label for="fullname">Full Name:
+        <input type="text" id="fullname" th:field="*{FullName}">
+        <span th:if="${#fields.hasErrors('FullName')}" th:errors="*{FullName}"></span>
+    </label><br><br>
+</div>
+
+<div>
+    <label for="regno">Reg.No:
+        <input type="number" id="regno" th:field="*{RegNo}">
+        <span th:if="${#fields.hasErrors('RegNo')}" th:errors="*{RegNo}"></span>
+    </label><br><br>
+</div>
+
+
+<div align="right">
+    <label for="whatsappno">Whatsapp No:
+        <input type="number" id="whatsappno" th:field="*{WhatsappNo}">
+        <span th:if="${#fields.hasErrors('WhatsappNo')}" th:errors="*{WhatsappNo}"></span>
+    </label><br><br>
+</div>
+
+
+<div>
+    <label for="email">Email id:
+        <input type="email" id="email" th:field="*{EmailId}">
+        <span th:if="${#fields.hasErrors('EmailId')}" th:errors="*{EmailId}"></span>
+    </label><br><br>
+</div>
+
+
+<div>
+    <label for="coursecode">Course & Code:
+        <input type="text" id="coursecode" th:field="*{CourseCode}">
+        <span th:if="${#fields.hasErrors('CourseCode')}" th:errors="*{CourseCode}"></span>
+    </label><br><br>
+</div>
+
+
+<div>
+    <label for="trinername">Trainer Name:
+        <input type="text" id="trinername" th:field="*{TrinerName}">
+        <span th:if="${#fields.hasErrors('TrinerName')}" th:errors="*{TrinerName}"></span>
+    </label><br><br>
+</div>
+
+<div>
+    <label>
+        <input type="checkbox" th:field="*{agreeToTerms}">I agree to the terms and conditions
+    </label>
+    <span th:if="${#fields.hasErrors('agreeToTerms')}" th:errors="*{agreeToTerms}"></span>
+</div><br><br>
+
+
+
+<button type="submit">submit</button>
+
+
+</form>
+</div>
+</body>
+</html>

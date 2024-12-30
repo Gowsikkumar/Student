@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+</head>
+<body>
+<form th:action="@{'/update/'+${students.id}}" method="post">
+    <label for="formno">Enter FormNo:
+        <input type="number" id="formno" th:value="${students.FormNo}" name="FormNo" placeholder="Enter FormNo">
+    </label><br><br>
+
+    <label for="date">Enter Date:
+        <input type="date" id="date" th:value="${students.Date}" name="Date" placeholder="Enter Date">
+    </label><br><br>
+
+
+    <label for="fullname">Enter Full name:
+        <input type="text" id="fullname" th:value="${students.FullName}" name="FullName" placeholder="Enter FullName">
+    </label><br><br>
+
+
+    <label for="regno">Enter RegNo:
+        <input type="number" id="regno" th:value="${students.RegNo}" name="RegNo" placeholder="Enter RegNo">
+    </label><br><br>
+
+
+    <label for="whats">Enter WhatsappNo:
+        <input type="number" id="whats" th:value="${students.WhatsappNo}" name="WhatsappNo" placeholder="Enter WhatsappNo">
+    </label><br><br>
+
+
+    <label for="email">Enter Email Id:
+        <input type="email" id="email" th:value="${students.EmailId}" name="EmailId" placeholder="Enter EmailId">
+    </label><br><br>
+
+
+    <label for="course">Enter CourseCode:
+        <input type="text" id="course" th:value="${students.CourseCode}" name="CourseCode" placeholder="Enter CourseCode">
+    </label><br><br>
+
+
+    <label for="tri">Enter TrinerName:
+        <input type="text" id="tri" th:value="${students.TrinerName}" name="TrinerName" placeholder="Enter TrinerName">
+    </label><br><br>
+
+
+    <label for="agree">
+        <input type="checkbox" id="agree" th:value="${students.agreeToTerms}" name="agreeToTerms" >I agree to the terms and conditions
+    </label><br><br>
+
+
+
+    <button type="submit">update</button>
+
+
+
+
+
+
+
+</form>
+
+</body>
+</html>
